@@ -1,0 +1,675 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <!-- SCRIPT DE PROTEÇÃO ADICIONADO CONFORME SOLICITADO -->
+    <script>
+        // 1. Bloquear acesso pelo computador e carregar uma página diferente
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Se for desktop, redireciona. Você pode trocar "https://www.google.com" pelo link que desejar.
+            window.location.replace("https://www.google.com");
+        }
+
+        // 2. Bloquear Botão Direito (Anti-Right Click)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 3. Bloquear Atalhos de Inspeção e Salvamento (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S, etc.)
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Inspecionar (Ctrl+Shift+I/J/C)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ver código fonte e Salvar (Ctrl+U, Ctrl+S)
+            if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 4. Dificultar Inspeção e Extensões (Anti-DevTools Loop)
+        // Isso trava o console caso o usuário tente inspecionar o código
+        setInterval(function() {
+            (function() {
+                return false;
+            }['constructor']('debugger')['call']());
+        }, 100);
+
+        // 5. Prevenir seleção de texto e arrastar imagens (Anti-clonagem visual)
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+    </script>
+    <!-- FIM DO SCRIPT DE PROTEÇÃO -->
+
+    <meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=cb7e862e-59f4-4adf-bfd7-e54b82da138e
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truque das Lésbicas - O Segredo Natural</title>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1106990521337443');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1106990521337443&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e50914;
+            --primary-dark: #b80710;
+            --accent: #ff2a2a;
+            --bg-base: #050505;
+            --bg-gradient: radial-gradient(circle at top center, #1f0507 0%, #050505 40%, #000000 100%);
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --fb-blue: #385898; 
+            --fb-bg: #ffffff;
+            --fb-text: #050505;
+            --fb-muted: #65676b;
+            --fb-comment-bg: #f0f2f5;
+            --success: #10b981;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body { height: 100%; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-main);
+            background: var(--bg-gradient);
+            background-color: var(--bg-base);
+            line-height: 1.5;
+            padding-top: 48px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Barra Superior Premium */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .topbar-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0,0,0,0.2);
+            padding: 4px 16px;
+            border-radius: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse-green 1.5s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Estrutura Principal */
+        .wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .headline {
+            font-size: clamp(20px, 4.5vw, 32px);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            color: #d4d4d8; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            max-width: 850px;
+        }
+
+        .headline span.text-white {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .headline span.highlight { 
+            color: var(--accent);
+            text-shadow: 0 0 24px rgba(255, 42, 42, 0.4);
+        }
+
+        /* Nova classe para a cor amarela solicitada */
+        .headline span.yellow-highlight {
+            color: #ffea00;
+            text-shadow: 0 0 20px rgba(255, 234, 0, 0.4);
+        }
+
+        .subheadline {
+            font-size: clamp(16px, 2.5vw, 22px);
+            font-weight: 500;
+            color: #d4d4d8;
+            margin-bottom: 40px;
+            max-width: 700px;
+            line-height: 1.4;
+        }
+
+        /* Player */
+        .vsl-container {
+            width: 100%;
+            max-width: 850px;
+            position: relative;
+            background: #ffffff;
+            margin: 0 auto 60px;
+        }
+
+        .vsl-wrap {
+            position: relative;
+            width: 100%;
+            /* Correção Aplicada: Removidos 'aspect-ratio: 16/9' e 'overflow: hidden' para não cortar a VSL e o botão do VTurb */
+            background: #ffffff;
+            z-index: 2;
+        }
+
+        /* Seção de Comentários */
+        .social-proof {
+            max-width: 750px;
+            width: 100%;
+            margin: 0 auto 60px;
+            background: var(--fb-bg);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+            color: var(--fb-text);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .comments-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+
+        .comments-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1c1e21;
+        }
+        
+        .comments-count {
+            font-size: 14px;
+            color: var(--fb-muted);
+            font-weight: 500;
+        }
+
+        .comment-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .comment-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e4e6eb;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+
+        .comment-body { flex: 1; }
+
+        .comment-content-box {
+            background: var(--fb-comment-bg);
+            padding: 10px 14px;
+            border-radius: 18px;
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .comment-name {
+            display: block;
+            color: var(--fb-blue);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 2px;
+            letter-spacing: -0.2px;
+        }
+
+        .comment-text {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #1c1e21;
+            margin: 0;
+        }
+
+        .comment-meta {
+            font-size: 12px;
+            margin-top: 4px;
+            margin-left: 12px;
+            color: var(--fb-muted);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .comment-meta span {
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .comment-meta span:hover { color: var(--fb-blue); text-decoration: underline; }
+        .comment-time { font-weight: 400 !important; }
+
+        .comment-item.reply {
+            margin-top: 12px;
+            margin-bottom: 0;
+            gap: 8px;
+        }
+
+        .comment-item.reply .comment-avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        .comment-item.reply .comment-text {
+            font-size: 14px;
+        }
+
+        /* Notificação de Vendas */
+        #sales-notification {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 4px solid var(--success);
+            color: #ffffff;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 9999;
+            transform: translateX(-120%) scale(0.95);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            max-width: 340px;
+            pointer-events: none;
+        }
+
+        #sales-notification.show { 
+            transform: translateX(0) scale(1); 
+            opacity: 1;
+        }
+
+        .notif-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .notif-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--success);
+        }
+
+        .notif-text { font-size: 13px; line-height: 1.4; color: #a1a1aa; }
+        .notif-text strong { display: block; color: #ffffff; font-size: 15px; margin-bottom: 2px;}
+        .notif-text span { 
+            display: inline-block;
+            margin-top: 4px;
+            color: var(--success); 
+            font-weight: 600; 
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            padding: 40px 20px 60px;
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: #000;
+        }
+
+        .legal-links { margin-bottom: 12px; }
+        .legal-links a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+        .legal-links a:hover { color: #fff; }
+
+        @media (max-width: 600px) {
+            .wrapper { padding: 30px 16px 10px; }
+            #sales-notification {
+                bottom: 16px;
+                left: 16px;
+                right: 16px;
+                max-width: none;
+            }
+            .social-proof { padding: 16px; }
+            .comment-content-box { padding: 8px 12px; }
+            .comment-text { font-size: 14px; }
+        }
+    </style>
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="topbar-content">
+            <div class="dot"></div>
+            <span><span id="viewerCount">942</span> HOMENS ASSISTINDO AGORA</span>
+        </div>
+    </div>
+
+    <main class="wrapper">
+        <h1 class="headline">
+            <span class="text-white">A RECEITA  QUE OS ATORES USAM PARA AUMENTAR O PÊNIS</span> E DURAR <span class="highlight">MAIS DE 2 HORAS NA CAMA</span> <br> (FOI <span class="yellow-highlight">REVELADO NESTE VIDEO</span>)…
+        </h1>
+        
+        <p class="subheadline">
+            Saiba como fazer ela GOZAR MULTIPLAS VEZES com este truque
+        </p>
+
+        <div class="vsl-container">
+            <div class="vsl-wrap">
+<vturb-smartplayer id="vid-6ae9788df6b60a2da17de3e2" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 100% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/e984ae4f-723b-4a7e-8098-ad701a5746ff/players/6ae9788df6b60a2da17de3e2/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://www.redoxpay.site/c/sal" target="_blank" style="display: inline-block; background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-dark) 100%); color: white; padding: 18px 48px; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 30px rgba(229, 9, 20, 0.5); transition: all 0.3s ease; border: none; cursor: pointer;">
+                QUERO ACESSAR AGORA
+            </a>
+        </div>
+
+    <section class="social-proof">
+        <div class="comments-header">
+            <div class="comments-title">Comentários mais relevantes</div>
+            <div class="comments-count">10 comentários</div>
+        </div>
+
+        <div class="comment-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFYcfgSIabvvFVRlEtPtrR8bDhqJWBmDphtA&amp;s" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">João Tembe</span>
+                    <p class="comment-text">Irmãos, não é mentira! Fiz esse truque e meu penis ficou mais grosso e aumentou de tamanho. experimentem! 🙏🏾</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">12 min</span>
+                </div>
+                
+                <div class="comment-item reply">
+                    <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=150&amp;h=150&amp;fit=crop" class="comment-avatar" alt="Avatar">
+                    <div class="comment-body">
+                        <div class="comment-content-box">
+                            <span class="comment-name">Marcos Silva</span>
+                            <p class="comment-text">Mano, isso não é burla? Já gastei muito dinheiro com essas coisas e nada.</p>
+                        </div>
+                        <div class="comment-meta">
+                            <span>Curtir</span><span>Responder</span><span class="comment-time">8 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-item reply">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFYcfgSIabvvFVRlEtPtrR8bDhqJWBmDphtA&amp;s" class="comment-avatar" alt="Avatar">
+                    <div class="comment-body">
+                        <div class="comment-content-box">
+                            <span class="comment-name">João Tembe</span>
+                            <p class="comment-text">Não é burla não meu irmão, também achei que fosse mas arrisquei. Graças a Deus deu certo, podes confiar que os ingredientes tu tens aí em casa mesmo.</p>
+                        </div>
+                        <div class="comment-meta">
+                            <span>Curtir</span><span>Responder</span><span class="comment-time">2 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&amp;h=150&amp;fit=crop" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Carlos Matsinhe</span>
+                    <p class="comment-text">Parei de gastar dinheiro à toa nas farmácias. Agora com a receita, ela goza várias vezes e chega a gritar de prazer.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">18 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjy5Qfo7sq1S2ym0-FomNQDRpWM1SInUM9Ow&amp;s" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Pedro Cossa</span>
+                    <p class="comment-text">Agora, com esse truque natural, consigo ficar mais de meia hora a foder. Valeu Doutora Vanessa!</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">31 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=150&amp;h=150&amp;fit=crop" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Mário N’guila</span>
+                    <p class="comment-text">Pessoal, Além de aguentar mais de 40 minutos, eu medi e meu pau aumentou +5cm em poucas semanas.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">42 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="images/360_F_327794038_qHFSUF20HJpcQwmdk3a7QhTltap4iisP.jpg" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Augusto Matsinhe</span>
+                    <p class="comment-text">Ontem foi a terceira vez que usei esse truque e minha mulher teve que pedir pra parar porque não aguentava mais de tanto tempo. O bicho fica duro como pedra o tempo todo. Mudou minha vida esse truque.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">55 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=150&amp;h=150&amp;fit=crop" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Samuel Chirinda</span>
+                    <p class="comment-text">O vídeo é rápido mas a dica vale ouro. Nunca pensei que uma coisa caseira ia funcionar assim.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">1 h</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="images/pov-selfie-outside-cheerful-smiling-600nw-2237129473.jpg" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Francisco Maquia</span>
+                    <p class="comment-text">Antes eu durava só uns 2 minutos e ficava acabado. Mas esse truque me ajudou a durar mais tempo e ainda fez aumentar o tamanho do meu pau.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">2 h</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-item">
+            <img src="images/pexels-photo-4559951.jpeg" class="comment-avatar" alt="Avatar">
+            <div class="comment-body">
+                <div class="comment-content-box">
+                    <span class="comment-name">Daniel Mabunda</span>
+                    <p class="comment-text">Em 3 dias eu já vi a diferença. A ejaculação precoce sumiu e estou a durar muito mais que antes.</p>
+                </div>
+                <div class="comment-meta">
+                    <span>Curtir</span><span>Responder</span><span class="comment-time">2 h</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="sales-notification">
+        <div class="notif-icon-wrapper">
+            <svg class="notif-icon" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+            </svg>
+        </div>
+        <div class="notif-text">
+            <strong id="notif-name"></strong>
+            Acabou de adquirir a Formula Proibida.
+            <span id="notif-time">agora mesmo</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="legal-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Contato</a>
+        </div>
+        <p>© 2026 Formula Proibida. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        setInterval(() => {
+            const count = document.getElementById('viewerCount');
+            let current = parseInt(count.innerText);
+            const change = Math.floor(Math.random() * 7) - 3;
+            let newValue = current + change;
+            if(newValue < 800) newValue = 800; 
+            count.innerText = newValue;
+        }, 3500);
+
+        const names = [
+            "António J.", "Bernardo S.", "Sérgio M.", "Duarte F.", 
+            "Filipe G.", "Estevão K.", "Marcos V.", "Ricardo L.",
+            "Gustavo H.", "Marcelo P.", "André T.", "Juliano C.",
+            "Otávio B.", "Fernando S.", "Samuel R.", "Cláudio M.",
+            "Roberto G.", "Paulo T.", "Mauro N.", "Wagner D.",
+            "Bruno C.", "Luciano F.", "Silvio A.", "Eduardo P."
+        ];
+
+        const notifBox = document.getElementById('sales-notification');
+        const notifName = document.getElementById('notif-name');
+        const notifTime = document.getElementById('notif-time');
+
+        function getRandomTimeString() {
+            const randomChance = Math.random();
+            if (randomChance < 0.25) {
+                return "Agora mesmo";
+            } else if (randomChance < 0.6) {
+                const secs = Math.floor(Math.random() * 47) + 12;
+                return `Há ${secs} segundos`;
+            } else {
+                const mins = Math.floor(Math.random() * 13) + 2;
+                return `Há ${mins} minuto${mins > 1 ? 's' : ''}`;
+            }
+        }
+
+        function showNotification() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            notifName.innerText = randomName;
+            notifTime.innerText = getRandomTimeString();
+            notifBox.classList.add('show');
+            setTimeout(() => {
+                notifBox.classList.remove('show');
+            }, 6000);
+        }
+
+        setTimeout(() => {
+            showNotification();
+            function scheduleNext() {
+                const delay = Math.floor(Math.random() * (35000 - 15000 + 1)) + 15000;
+                setTimeout(() => {
+                    showNotification();
+                    scheduleNext();
+                }, delay);
+            }
+            scheduleNext();
+        }, 3000);
+    </script>
+
+</body></html>
