@@ -398,11 +398,16 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin: 40px 0;">
+        <div id="checkout-btn" style="text-align: center; margin: 40px 0; display: none;">
             <a href="https://www.redoxpay.site/c/sal" target="_blank" style="display: inline-block; background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-dark) 100%); color: white; padding: 18px 48px; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 30px rgba(229, 9, 20, 0.5); transition: all 0.3s ease; border: none; cursor: pointer;">
                 QUERO ACESSAR AGORA
             </a>
         </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('checkout-btn').style.display = 'block';
+            }, 555000);
+        </script>
 
     <section class="social-proof">
         <div class="comments-header">
